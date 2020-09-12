@@ -1,47 +1,60 @@
 <head>
-    <!-- ToDo: Update meta tags -->
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta property="og:title" content="Mission Guac Party!" />
-    <meta property="og:description" content="Back for a 8th year we'll be celebrating with friends, neighbors, and fellow guacamole enthusiasts!" />
-    <meta property="og:image" content="https://www.guacamole.expert/img/guac-off-opengraph-2019.jpg" />
-    <meta property="twitter:image" content="https://www.guacamole.expert/img/guac-off-opengraph-2019.jpg" />
-    <meta property="twitter:title" content="Mission Guac Party!" />
-    <meta property="twitter:description" content="Back for a 8th year we'll be celebrating with friends, neighbors, and fellow guacamole enthusiasts!" />
-    <meta name="twitter:card" content='summary_large_image'>
-    <meta name="twitter:label1" value="When is it?" />
-    <meta name="twitter:data1" value="Sept. 14th, 2019, 1-5pm" />
-    <meta name="twitter:label2" value="Is this a competition?" />
-    <meta name="twitter:data2" value="Absolutely! The trophy is amazing!" />
+  <script>
+  (function(i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function() {
+              (i[r].q = i[r].q || []).push(arguments)
+          },
+          i[r].l = 1 * new Date();
+      a = s.createElement(o),
+          m = s.getElementsByTagName(o)[0];
+      a.async = 1;
+      a.src = g;
+      m.parentNode.insertBefore(a, m)
+  })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+  ga('create', 'UA-34819223-6', 'auto');
+  ga('send', 'pageview');
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta property="og:title" content="Guac Walk 2020!" />
+  <meta property="og:description" content="Back for a 9th year we'll be celebrating with by going on an adventure!" />
+  <meta property="og:image" content="https://i.imgur.com/dh0wumY.png" />
+  <meta property="twitter:image" content="https://i.imgur.com/dh0wumY.png" />
+  <meta property="twitter:title" content="Mission Guac Party!" />
+  <meta property="twitter:description" content="Back for a 9th year we'll be celebrating with by going on an adventure!" /
+  <meta name="twitter:card" content='summary_large_image'>
+  <meta name="twitter:label1" value="When is it?" />
+  <meta name="twitter:data1" value="September 12th-19th" />
+  <meta name="twitter:label2" value="Should I bring my walking shoes?" />
+  <meta name="twitter:data2" value="Absolutely!!" />
 
-    <title>GuacWalk 2020</title>
+  <!-- ToDo: Edit title and add favicon -->
+  <title>GuacWalk 2020</title>
 </head>
+<html>
+  <div class="spotlight"></div>
+  <link rel="stylesheet" type="text/css" href="stylesheet.css">
+  <div class="mobile">
+    <div id="wrapper">
+      <div id="map"><img src="map.png"></div>
+    </div>
+  </div>
+</html>
 
-<div class="avoportal" id="avoportal">
-<link rel="stylesheet" type="text/css" href="stylesheet.css">
-</div>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.11.6/utils/Draggable.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.11.5/TweenMax.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+<script>Draggable.create("#map img", {type:"x,y", bounds:"#wrapper", edgeResistance:0.5})</script>
 <script>
-  var el = document.querySelector("#avoportal");
+  window.addEventListener("DOMContentLoaded", () => {
+    const spotlight = document.querySelector('.spotlight');
+    let spotlightSize = 'transparent 130px, rgba(0, 0, 0, 0.90) 150px)';
 
-  el.addEventListener("mousemove", (e) => {
-    el.style.backgroundPositionX = (-e.offsetX*2.75) + "px";
-    el.style.backgroundPositionY = (-e.offsetY*2.75) + "px";
+    window.addEventListener('mousemove', e => updateSpotlight(e));
+
+    function updateSpotlight(e) {
+      spotlight.style.backgroundImage = `radial-gradient(circle at ${e.pageX / window.innerWidth * 100}% ${e.pageY / window.innerHeight * 100}%, ${spotlightSize}`;
+    }
   });
 </script>
-
-<!-- Need to setup new property for GA before enabling -->
-<!-- <script>
-(function(i, s, o, g, r, a, m) {
-    i['GoogleAnalyticsObject'] = r;
-    i[r] = i[r] || function() {
-            (i[r].q = i[r].q || []).push(arguments)
-        },
-        i[r].l = 1 * new Date();
-    a = s.createElement(o),
-        m = s.getElementsByTagName(o)[0];
-    a.async = 1;
-    a.src = g;
-    m.parentNode.insertBefore(a, m)
-})(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
-ga('create', 'UA-34819223-6', 'auto');
-ga('send', 'pageview');
-</script> -->

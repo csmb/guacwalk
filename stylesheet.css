@@ -1,23 +1,67 @@
+@media screen and (min-width: 850px) {
+  body {
+    background: url(map.png) no-repeat center;
+    background-size: contain;
+    width: 100vw;
+    height: 100vh;
+    cursor: none;
+    margin: 0px;
+  }
+
+  .spotlight {
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    background-image: radial-gradient(
+      circle,
+      transparent 160px,
+      rgba(0, 0, 0, 0.85) 200px
+    );
+  }
+
+  #wrapper {
+    display: none;
+  }
+  #map {
+    display: none;
+  }
+}
+
 body {
+  background-size: cover;
+  width: 100vw;
   height: 100vh;
-  margin: 0;
+  margin: 0px;
+  background-color: green;
+}
+
+.mobile {
   display: flex;
   justify-content: center;
   align-items: center;
   background: radial-gradient(
-    #936549,
-    #222
+    circle,
+    transparent 160px,
+    rgba(0, 0, 0, 0.85) 200px
   );
 }
 
-.avoportal {
-  --x: 0px;
-  --y: 0px;
-  background-image: url(map.png);
-  background-size: 1000px;
-  background-position: var(--x) var(--y);
-  border: 1px solid white;
+#wrapper {
+  width: 100vw;
+  height:50vh;
+  overflow: hidden;
+  margin-top: 50%;
+  border-radius: 50%;
+  position: fixed;
+}
 
-  width: 300px;
-  height: 300px;
+#map {
+  position: relative;
+}
+
+#map img {
+  background-size: 100px 100px;
+  border: 10px;
+  width: 2000px;
+  height: 2000px;
 }
