@@ -1,11 +1,13 @@
 @media screen and (min-width: 850px) {
   body {
-    background: url(map.png) no-repeat center;
-    background-size: contain;
+    background: url(map.png) no-repeat;
+    background-size: auto 100%;
+    background-position: center;
     width: 100vw;
     height: 100vh;
     cursor: none;
     margin: 0px;
+    background-color: green;
   }
 
   .spotlight {
@@ -27,41 +29,36 @@
   }
 }
 
-body {
-  background-size: cover;
-  width: 100vw;
-  height: 100vh;
-  margin: 0px;
-  background-color: green;
-}
+@media screen and (max-width: 850px) {
+  body {
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+    margin: 0px;
+    background-color: green;
+  }
 
-.mobile {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: radial-gradient(
-    circle,
-    transparent 160px,
-    rgba(0, 0, 0, 0.85) 200px
-  );
-}
+  .mobile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
-#wrapper {
-  width: 100vw;
-  height:50vh;
-  overflow: hidden;
-  margin-top: 50%;
-  border-radius: 50%;
-  position: fixed;
-}
+  #wrapper {
+    width: 100vw;
+    height:50vh;
+    overflow: hidden;
+    margin-top: 50%;
+    border-radius: 50%;
+  }
 
-#map {
-  position: relative;
-}
+  #map {
+    position: relative;
+  }
 
-#map img {
-  background-size: 100px 100px;
-  border: 10px;
-  width: 2000px;
-  height: 2000px;
+  #map img {
+    margin: -800px -50px 0px -80px;
+    width: 1250px;
+    height: 1250px;
+  }
 }
