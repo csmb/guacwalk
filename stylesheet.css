@@ -29,7 +29,7 @@
   }
 }
 
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 849px) {
   body {
     background-size: cover;
     width: 100vw;
@@ -46,10 +46,12 @@
 
   #wrapper {
     width: 100vw;
-    height:50vh;
+    height: 50vh;
     overflow: hidden;
     margin-top: 50%;
     border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
   }
 
   #map {
