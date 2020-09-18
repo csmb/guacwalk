@@ -17,7 +17,7 @@
   ga('create', 'UA-34819223-6', 'auto');
   ga('send', 'pageview');
   </script>
-  <meta name="viewport" content="height=device-height, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta property="og:title" content="Guac Walk 2020!">
   <meta property="og:description" content="Back for a 9th year we'll be celebrating with by going on an adventure!">
   <meta property="og:image" content="https://i.imgur.com/dh0wumY.png">
@@ -38,7 +38,7 @@
   <div class="spotlight"/>
   <div class="mobile">
     <div id="wrapper">
-      <div id="map"><img alt="" src="map.png"/>
+      <div id="map"><img alt="map" src="map.png"/>
     </div>
   </div>
 
@@ -48,16 +48,20 @@
 
 <script>Draggable.create("#map img", {type:"x,y", bounds:"#wrapper", edgeResistance:0.5})</script>
 <script>
-  window.addEventListener("DOMContentLoaded", () => {
-    const spotlight = document.querySelector('.spotlight');
-    let spotlightSize = 'transparent 130px, rgba(0, 0, 0, 0.90) 150px)';
+  if ($(window).width() > 850) {
+    window.addEventListener("DOMContentLoaded", () => {
+      const spotlight = document.querySelector('.spotlight');
+      let spotlightSize = 'transparent 130px, rgba(0, 0, 0, 0.90) 150px)';
 
-    window.addEventListener('mousemove', e => updateSpotlight(e));
+      window.addEventListener('mousemove', e => updateSpotlight(e));
 
-    function updateSpotlight(e) {
-      spotlight.style.backgroundImage = `radial-gradient(circle at ${e.pageX / window.innerWidth * 100}% ${e.pageY / window.innerHeight * 100}%, ${spotlightSize}`;
+      function updateSpotlight(e) {
+        spotlight.style.backgroundImage = `radial-gradient(circle at ${e.pageX / window.innerWidth * 100}% ${e.pageY / window.innerHeight * 100}%, ${spotlightSize}`;
+      }
+    });
     }
-  });
+  else {  
+  }
 </script>
 </body>
 </html>

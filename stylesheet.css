@@ -18,11 +18,11 @@
     height: 100vh;
     width: 100vw;
     /* border-radius: 50%; */
-    /* background-image: radial-gradient( */
-      /* circle, */
-      /* transparent 160px, */
-      /* rgba(0, 0, 0, 0.85) 200px */
-    /* ); */
+    /* background-image: radial-gradient(
+      circle,
+      transparent 160px,
+      rgba(0, 0, 0, 0.85) 200px
+    ); */
   }
 
   #wrapper {
@@ -54,7 +54,7 @@
     height: 50vh;
     overflow: hidden;
     margin-top: 50%;
-    /* border-radius: 50%; */
+    border-radius: 50%;
     -moz-border-radius: 50rem;
     -webkit-border-radius: 50rem;
   }
