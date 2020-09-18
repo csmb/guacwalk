@@ -9,7 +9,7 @@ body {
 }
 
 #map img {
-  background: url(map.png) no-repeat;
+  /* background: url(map.png) no-repeat; */
   margin: auto;
   height: 100vh;
 }
