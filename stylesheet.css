@@ -1,5 +1,4 @@
 body {
-  /* background: url(map.png) no-repeat; */
   background-size: auto 100%;
   background-position: center;
   width: 100vw;
@@ -9,7 +8,6 @@ body {
 }
 
 #map img {
-  /* background: url(map.png) no-repeat; */
   margin: auto;
   height: 100vh;
 }
