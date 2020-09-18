@@ -1,9 +1,15 @@
 body {
-  background: url(map.png) no-repeat;
+  /* background: url(map.png) no-repeat; */
   background-size: auto 100%;
   background-position: center;
   width: 100vw;
   height: 100vh;
   margin: 0px;
   background-color: green;
+}
+
+#map img {
+  background: url(map.png) no-repeat;
+  margin: auto;
+  height: 100vh;
 }
