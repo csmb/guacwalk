@@ -35,33 +35,5 @@
   <title>GuacWalk 2020</title>
 </head>
 <body>
-  <div class="spotlight"/>
-  <div class="mobile">
-    <div id="wrapper">
-      <div id="map"><img alt="map" src="map.png"/>
-    </div>
-  </div>
-
-<script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.11.6/utils/Draggable.min.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.11.5/TweenMax.min.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-
-<script>Draggable.create("#map img", {type:"x,y", bounds:"#wrapper", edgeResistance:0.5})</script>
-<script>
-  if ($(window).width() > 850) {
-    window.addEventListener("DOMContentLoaded", () => {
-      const spotlight = document.querySelector('.spotlight');
-      let spotlightSize = 'transparent 130px, rgba(0, 0, 0, 0.90) 150px)';
-
-      window.addEventListener('mousemove', e => updateSpotlight(e));
-
-      function updateSpotlight(e) {
-        spotlight.style.backgroundImage = `radial-gradient(circle at ${e.pageX / window.innerWidth * 100}% ${e.pageY / window.innerHeight * 100}%, ${spotlightSize}`;
-      }
-    });
-    }
-  else {  
-  }
-</script>
 </body>
 </html>
