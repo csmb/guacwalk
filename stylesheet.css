@@ -41,6 +41,7 @@
     margin: 0px;
     background-color: green;
     -webkit-font-smoothing: antialiased
+    transform: none;
   }
 
   .mobile {
@@ -55,12 +56,15 @@
     overflow: hidden;
     margin-top: 50%;
     border-radius: 50%;
-    -moz-border-radius: 50rem;
-    -webkit-border-radius: 50rem;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
   }
 
   #map {
     position: relative;
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
   }
 
   #map img {
