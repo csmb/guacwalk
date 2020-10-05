@@ -16,7 +16,7 @@ body {
 
 @media (max-width: 950px) {
   #map img {
-    margin-left: -25vw;
-    height: 85vh;
+    margin-left: -50vw;
+    height: 65vh;
   }
 }
