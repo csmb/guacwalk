@@ -11,5 +11,12 @@ body {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  height: 85vh;
+  height: 100vh;
+}
+
+@media (max-width: 950px) {
+  #map img {
+    margin-left: -25vw;
+    height: 85vh;
+  }
 }
