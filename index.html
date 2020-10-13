@@ -26,11 +26,129 @@
   <title>GuacWalk 2020</title>
 </head>
 <body>
-  <div id="map"><img alt="mysterious map" src="map.png"/>
+  <div id="image-placeholder"><img alt="mysterious map"/>
 
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.11.6/utils/Draggable.min.js'></script>
+  <!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.11.6/utils/Draggable.min.js'></script>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.11.5/TweenMax.min.js'></script>
+  <script>Draggable.create("#map img", {type: "rotation", inertia: true})</script> -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/kineticjs/4.6.0/kinetic.min.js"></script>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-  <script>Draggable.create("#map img", {type: "rotation", inertia: true})</script>
+<script>
+jQuery(document).ready(function() {
+  var img_path = 'map.png';
+  var viewport_width  = 400;
+  var viewport_height = 800;
+  var img_width  = 800;
+  var img_height = 800;
+  var offset_width = img_width / 2;
+  var offset_height = img_height / 2;
+  var pos = {};
+  var last_dist = 0;
+  // Create instances
+  var stage = new Kinetic.Stage({
+    container: 'image-placeholder',
+    width: viewport_width,
+    height: viewport_height
+  });
+  var image = new Image();
+  var imageLayer = new Kinetic.Layer({
+    x: 150,
+    y: 150,
+    draggable: true,
+    offset: [offset_width, offset_height]
+  });
+  stage.draw();
+  image.src = img_path;
+  // Load picture
+  image.onload = function() {
+    var logoImg = new Kinetic.Image({
+      x: 0,
+      y: 0,
+      image: this,
+      width: img_width,
+      height: img_height
+    });
+    imageLayer.add(logoImg);
+    stage.add(imageLayer);
+    imageLayer.draw();
+  };
+  
+ // Add multi-touch zoom and rotation
+  stage.getContent().addEventListener('touchstart', function(evt) {
+    pos.start  = getXYfromEvent(evt);
+    init_angle = imageLayer.getRotationDeg();
+  });
+  stage.getContent().addEventListener('touchmove', function(evt) {
+    var touch1 = evt.touches[0];
+    var touch2 = evt.touches[1];
+
+    if (touch1 && touch2) {
+      var dist;
+      var scale;
+      var rotate;
+
+      pos.move = getXYfromEvent(evt);
+      rotate = init_angle + getRotation(pos.start, pos.move);
+      imageLayer.setRotationDeg(rotate);
+      dist = getDistance({
+        x: touch1.clientX,
+        y: touch1.clientY
+      }, {
+        x: touch2.clientX,
+        y: touch2.clientY
+      });
+      if(!last_dist) {
+        last_dist = dist;
+      }
+      scale = imageLayer.getScale().x * dist / last_dist;
+      imageLayer.setScale(scale);
+      imageLayer.draw();
+      last_dist = dist;
+    }
+  }, false);
+  stage.getContent().addEventListener('touchend', function() {
+    last_dist = 0;
+  }, false);
+
+  
+  // Get the distance between two fingers
+  function getDistance(p1, p2) {
+    return Math.sqrt(Math.pow((p2.x - p1.x), 2) + Math.pow((p2.y - p1.y), 2));
+  }
+
+  // Get the angle of rotation made by two fingers
+  function getRotation(pos_start, pos_move) {
+    if (pos_start.length == 2 && pos_move.length == 2) {
+      var x, y;
+
+      x = pos_start[0].x - pos_start[1].x;
+      y = pos_start[0].y - pos_start[1].y;
+      var start_rotation = Math.atan2(y, x) * 180 / Math.PI;
+
+      x = pos_move[0].x - pos_move[1].x;
+      y = pos_move[0].y - pos_move[1].y;
+      var end_rotation = Math.atan2(y, x) * 180 / Math.PI;
+
+      return end_rotation - start_rotation;
+    }
+    return 0;
+  }
+
+  /**
+   * get the x and y positions from the event object
+   * @param  event
+   * @return array  [{ x: int, y: int }]
+   */
+  function getXYfromEvent(event) {
+    event = event || window.event;
+    var pos = [], src;
+    for(var t = 0, len = event.touches.length; t < len; t++) {
+      src = event.touches[t];
+      pos.push({x: src.pageX, y: src.pageY});
+    }
+    return pos;
+  }
+});
+  </script>
 </body>
 </html>
