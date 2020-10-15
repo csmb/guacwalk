@@ -24,7 +24,6 @@
   <meta name="twitter:data2" content="Absolutely!">
   <link rel="stylesheet" type="text/css" href="stylesheet.css">
 
-  <!-- ToDo: Add favicon -->
   <title>GuacWalk 2020</title>
 </head>
 <body>
@@ -46,7 +45,16 @@
   <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.11.5/TweenMax.min.js'></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/kineticjs/4.6.0/kinetic.min.js"></script>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-  <script>$('a').on('click', function(){$('.wrap, a').toggleClass('active');return false;});</script>
+  <script>$('a').on('click', function(){
+    $('.wrap, a').toggleClass('active');    
+    var link = document.getElementById('huh');
+
+    if (link.innerHTML === 'Huh?') link.innerHTML = 'Treasure Map?';
+      else {
+        link.innerHTML = 'Huh?';
+      }
+    return false;
+  });</script>
   <script>
     if (screen.width > 960) {
       Draggable.create("#map img", {type: "rotation", inertia: true})
