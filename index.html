@@ -9,6 +9,7 @@
     gtag('js', new Date());
     gtag('config', 'UA-34819223-7');
   </script>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400&display=swap" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=7.5, minimum-scale=1, user-scalable=yes">
   <meta property="og:title" content="Guac Walk 2020!">
   <meta property="og:description" content="Back for a 9th year we'll be celebrating with by going on an adventure!">
@@ -39,19 +40,13 @@
       <p>It’s as unexpected as an ice cream guacamole, and we hope you’ll find it to be equally delicious.</p>
     </div>
   </div>
-  <a id="huh" href='#'>WHAT</a>
-  <!-- <a href="#" id="huh">Huh?</a> -->
+  <a id="huh" href='#'>Huh?</a>
 
   <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.11.6/utils/Draggable.min.js'></script>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.11.5/TweenMax.min.js'></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/kineticjs/4.6.0/kinetic.min.js"></script>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-  <script>
-    $('a').on('click', function(){
-      $('.wrap, a').toggleClass('active');  
-      return false;
-    });
-  </script>
+  <script>$('a').on('click', function(){$('.wrap, a').toggleClass('active');return false;});</script>
   <script>
     if (screen.width > 960) {
       Draggable.create("#map img", {type: "rotation", inertia: true})

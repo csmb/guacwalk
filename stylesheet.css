@@ -26,16 +26,17 @@ body {
   bottom:0px;
   right:50%;
   left:50%;
+  font-family: 'Nunito', sans-serif;
 }
 
 .wrap {
   position: absolute;
   overflow: hidden;
-  top: 10%;
-  right: 10%;
-  bottom: 85px;
-  left: 10%;
-  padding: 20px 50px;
+  top: 1%;
+  right: 1%;
+  bottom: 1%;
+  left: 1%;
+  padding: 10px;
   display: block;
   border-radius: 4px;
   transform: translateY(20px);
@@ -108,4 +109,15 @@ a.button:hover {
 a.button.active {
   transform: rotate(135deg);
   transition: transform 0.5s;
+}
+
+h2 {
+  margin: auto;
+  width: 100%;
+  font-family: 'Nunito', sans-serif;
+}
+
+p {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 300;
 }
